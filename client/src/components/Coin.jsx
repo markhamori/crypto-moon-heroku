@@ -44,7 +44,7 @@ export const Coin = () => {
   return (
     <section id="coin" className="overflow-hidden bg-zinc-100">
       <div className="container lg:px-20">
-        <div className="min-h-full bg-zinc-100">
+        <div className="min-h-full md:min-h-screen bg-zinc-100">
           <div className="flex md:justify-end justify-center items-center md:items-end mt-20 px-10 md:px-0">
             <button
               type="button"

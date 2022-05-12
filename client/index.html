@@ -30,5 +30,19 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script
+      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js"
+      type="text/javascript"
+    ></script>
+    <script>
+      var Webflow = Webflow || [];
+      Webflow.push(function () {
+        $("a").click(function () {
+          setTimeout(function () {
+            history.replaceState(null, null, " ");
+          }, 0);
+        });
+      });
+    </script>
   </body>
 </html>

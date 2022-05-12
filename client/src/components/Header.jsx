@@ -42,7 +42,7 @@ export const Header = () => {
                     Portfolios
                   </li>
                 </a>
-                <a href="#coins-list">
+                <a href="#coin-list">
                   <li className="py-2 px-10 cursor-pointer bg-basic rounded-md text-zinc-900 hover:bg-[#74e7fc] transition-all">
                     Coin list
                   </li>
@@ -76,9 +76,9 @@ export const Header = () => {
                     Contact
                   </li>
                 </a>
-                <a href="#coins-list" onClick={() => closeSidebar()}>
+                <a href="#coin-list" onClick={() => closeSidebar()}>
                   <li className="py-2 px-10 cursor-pointer hover:bg-zinc-800 transition-all">
-                    Coins list
+                    Coin list
                   </li>
                 </a>
                 <a href="#top-portfolios" onClick={() => closeSidebar()}>

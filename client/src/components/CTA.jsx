@@ -3,7 +3,7 @@ import React from "react";
 export const CTA = () => {
   return (
     <section id="contact">
-      <div className="container p-10 lg:mt-5 xl:mt-24 2xl:mt-10">
+      <div className="container p-10 mt-32 sm:mt-52 lg:mt-20 xl:mt-52">
         <div className="flex flex-col">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-zinc-200 text-center font-bold text-3xl md:text-4xl mt-16 md:mt-24 lg:mt-10">

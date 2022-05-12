@@ -26,7 +26,7 @@ export const TopPortfolios = () => {
   return (
     <section id="top-portfolios">
       <div className="container">
-        <div className="flex flex-col items-center justify-center p-10 min-h-full">
+        <div className="flex flex-col items-center justify-center p-10 min-h-full md:min-h-screen">
           <h1 className="text-3xl text-center sm:text-4xl font-bold text-zinc-100 py-10">
             Portfolios from database
           </h1>
@@ -106,13 +106,6 @@ export const TopPortfolios = () => {
               </span>
               .
             </h1>
-            <div className="flex flex-row items-center justify-center animate-pulse">
-              <FontAwesomeIcon
-                className="text-second text-md"
-                icon={faArrowLeftLong}
-              />
-              <p className="text-second text-md ml-2">Click here!</p>
-            </div>
           </div>
         </div>
       </div>

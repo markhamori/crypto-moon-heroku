@@ -40,7 +40,7 @@ export const CoinList = () => {
   };
 
   return (
-    <section id="coins-list" className="relative overflow-x-hidden bg-zinc-100">
+    <section id="coin-list" className="relative overflow-x-hidden bg-zinc-100">
       <div className="container">
         <div className="flex flex-col max-h-screen py-10 lg:px-20 md:mb-20">
           <h1 className="absolute left-10 top-10 sm:top-0 md:top-10 font-bold text-zinc-800 text-[80px] md:text-[150px] opacity-5">

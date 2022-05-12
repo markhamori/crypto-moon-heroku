@@ -11,7 +11,7 @@ import cryptoMoonLogo from "../assets/images/crypto-moon-logo.svg";
 export const Footer = () => {
   return (
     <section id="footer">
-      <div className="bg-zinc-800 shadow-lg">
+      <div className="bg-zinc-800 shadow-lg block bottom-0 w-full">
         <div className="container p-10">
           <div className="flex flex-col-reverse sm:flex-row md:space-x-10">
             <div className="flex flex-col flex-1 lg:justify-between">
@@ -44,7 +44,7 @@ export const Footer = () => {
                   Lörem ipsum öhosade miras. Rent barriärvård åsiktskorridor,
                   tremigon. Rös pönade, ibong pasos.
                 </p>
-                <div className="flex flex-row text-xl text-zinc-200 space-x-5 mb-5 lg:mb-0 mt-5 xl:mt-10 sm:ml-10">
+                <div className="flex flex-row text-xl items-center justify-center sm:justify-start text-zinc-200 space-x-5 mb-5 lg:mb-0 mt-5 xl:mt-10 sm:ml-10">
                   <FontAwesomeIcon
                     className="hover:scale-105 hover:text-zinc-400 cursor-pointer"
                     icon={faLinkedinIn}
@@ -65,7 +65,7 @@ export const Footer = () => {
               </div>
               <div className="flex flex-none items-center justify-center">
                 <img
-                  className="w-[130px] sm:hidden lg:block lg:w-[150px]"
+                  className="w-[130px] hidden lg:block lg:w-[150px]"
                   src={cryptoMoonLogo}
                   alt="own-logo"
                 />

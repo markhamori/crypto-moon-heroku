@@ -66,7 +66,7 @@ export const Testimonial = () => {
           <h1 className="hidden md:absolute md:block md:right-[-500px] text-zinc-800 lg:-right-52 top-12 text-[200px] opacity-10">
             Testimonals
           </h1>
-          <div className="flex items-center min-h-full pt-20 pb-10 md:pt-40 md:pb-40 lg:min-h-full">
+          <div className="flex items-center min-h-screen pt-20 pb-10 md:pt-40 md:pb-40">
             <div className="flex w-full flex-row items-center justify-center mt-20 mb-20 md:mt-0 md:mb-0">
               <div className="flex flex-1 justify-start">
                 <FontAwesomeIcon
