@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import cryptoMoonLogo from "../assets/images/crypto-moon-logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -22,41 +23,50 @@ export const Header = () => {
 
   return (
     <header id="header">
-      <div className="container px-10 pt-10 lg:px-20 lg:pt-10 lg:pb-0">
-        <div className="flex justify-end sm:justify-between items-center lg:flex-row md:items-center">
-          <div className="flex w-full">
-            <img
-              className="hidden md:flex md:w-[100px] md:h-[90px] xl:w-[130px] xl:h-[120px]"
-              src={cryptoMoonLogo}
-              alt="crypto-moon-logo"
-            />
-            <nav className="md:flex-1 flex items-center justify-end">
-              <ul className="hidden md:flex lg:flex-row text-sm xl:text-md text-zinc-100 lg:gap-2 xl:gap-12">
-                <a href="#contact">
-                  <li className="py-2 px-10 xl:ml-12 cursor-pointer rounded-md hover:bg-zinc-800 transition-all">
-                    Contact
-                  </li>
-                </a>
-                <a href="#top-portfolios">
-                  <li className="py-2 px-10 cursor-pointer rounded-md hover:bg-zinc-800 transition-all">
-                    Portfolios
-                  </li>
-                </a>
-                <a href="#coin-list">
-                  <li className="py-2 px-10 cursor-pointer bg-basic rounded-md text-zinc-900 hover:bg-[#74e7fc] transition-all">
+      <div className="w-full">
+        <div className="container flex flex-col justify-center h-20">
+          <div className="flex flex-row items-center ">
+            <div className="hidden md:flex max-w-[60px]">
+              <Link to="/">
+                <img src={cryptoMoonLogo} alt="crypto-moon-logo" />
+              </Link>
+            </div>
+            <div className="flex flex-grow justify-end">
+              <FontAwesomeIcon
+                className="flex md:hidden text-zinc-100 text-2xl"
+                icon={faBars}
+                onClick={() => showSidebar()}
+              />
+            </div>
+
+            <nav>
+              <ul className="hidden md:flex flex-row space-x-5">
+                <Link to="/coin-list">
+                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
                     Coin list
                   </li>
-                </a>
+                </Link>
+                <Link to="/top-portfolios">
+                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
+                    Portfolios
+                  </li>
+                </Link>
+                <Link to="/contact">
+                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
+                    Exchanges
+                  </li>
+                </Link>
+                <Link to="/contact">
+                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
+                    Contact
+                  </li>
+                </Link>
               </ul>
             </nav>
           </div>
-          <FontAwesomeIcon
-            className="text-basic text-3xl md:hidden cursor-pointer"
-            icon={faBars}
-            onClick={() => showSidebar()}
-          />
         </div>
       </div>
+
       {isOpen ? (
         <div className="fixed left-0 top-0 bg-zinc-900 flex h-screen w-full flex-col items-center z-50 overflow-hidden">
           <div className="container h-full p-10">

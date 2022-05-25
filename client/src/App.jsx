@@ -11,32 +11,26 @@ import { Footer } from "./components/Footer";
 
 import { Coin } from "./components/Coin";
 
+import MainLayout from "./layout/MainLayout";
+
 // Additional styles
 import "./App.css";
-
-// Layouts
-import { HeaderLayout } from "./layouts/Header/HeaderLayout";
-import { FooterLayout } from "./layouts/Footer/FooterLayout";
-import { MainLayout } from "./layouts/Main/MainLayout";
 
 function App() {
   return (
     <Router>
       <MainLayout>
-        <HeaderLayout>
-          <Header />
-          <Hero />
-        </HeaderLayout>
+        <Header />
         <Routes>
-          <Route exact path="/" element={<CoinList />} />
-          <Route exact path="/coin/:id" element={<Coin />} />
+          <Route exact path="/" element={<Hero />} />
+          <Route exact path="/coin-list" element={<CoinList />} />
+          <Route exact path="/coin-list/coin/:id" element={<Coin />} />
+          {/* <Route exact path="/exchanges" element={<Exchanges />} /> */}
+          <Route exact path="/top-portfolios" element={<TopPortfolios />} />
+          <Route exact path="/testimonial" element={<Testimonial />} />
+          <Route exact path="/contact" element={<CTA />} />
         </Routes>
-        <TopPortfolios />
-        <Testimonial />
-        <FooterLayout>
-          <CTA />
-          <Footer />
-        </FooterLayout>
+        {/* <Footer /> */}
       </MainLayout>
     </Router>
   );

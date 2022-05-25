@@ -43,38 +43,26 @@ export const Exchanges = () => {
                     <h2 className="absolute text-xl lg:text-2xl text-teal-500 py-1 px-3 rounded bg-zinc-800">
                       Reliable Service
                     </h2>
-                    <img
-                      className="w-32 lg:w-32"
-                      src={guardLogo}
-                      alt="guard-logo"
-                    />
+                    <img className="w-32 lg:w-32" src="" alt="guard-logo" />
                   </div>
                   <div className="flex w-full items-center justify-evenly mt-20 lg:mt-10">
                     <h2 className="absolute text-2xl lg:text-4xl text-second py-1 px-3 rounded bg-zinc-200">
                       Safe & Secure
                     </h2>
-                    <img
-                      className="w-32 lg:w-fit"
-                      src={guardLogo}
-                      alt="guard-logo"
-                    />
+                    <img className="w-32 lg:w-fit" src="" alt="guard-logo" />
                   </div>
                   <div className="flex w-full items-center justify-evenly mt-20 lg:mt-10">
                     <h2 className="absolute text-xl lg:text-2xl text-teal-500 py-1 px-3 rounded bg-zinc-800">
                       Trustworthy
                     </h2>
-                    <img
-                      className="w-32 lg:w-32"
-                      src={guardLogo}
-                      alt="guard-logo"
-                    />
+                    <img className="w-32 lg:w-32" src="" alt="guard-logo" />
                   </div>
                 </div>
               </div>
               <div className="flex items-center justify-center">
                 <img
                   className="hidden lg:w-full lg:h-full lg:block"
-                  src={creditCard}
+                  src=""
                   alt="credit-card"
                 />
               </div>

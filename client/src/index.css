@@ -31,6 +31,19 @@ code {
   background: #7e7979c4;
 }
 
+.page-transition {
+  animation: pageTransition 1s linear;
+}
+
+@keyframes pageTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

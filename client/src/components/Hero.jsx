@@ -21,11 +21,11 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section id="hero relative overflow-hidden">
-      <div className="container flex items-center justify-center sm:px-20 lg:mb-10 min-h-screen md:min-h-[80vh] sm:mt-0">
-        <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-center items-center">
+    <section id="hero">
+      <div className="container min-h-[80vh] flex items-center justify-center mx-auto lg:mb-10 sm:mt-0 page-transition">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <img
-            className="w-[500px] lg:w-[400px] 2xl:w-[700px] block mt-10 md:mt-0"
+            className="max-w-xs md:max-w-sm"
             src={blockchain}
             alt="hero-image"
           />
@@ -33,7 +33,7 @@ export const Hero = () => {
             <h1 className="text-zinc-100 font-semibold text-center xl:text-left text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-5 md:mt-0">
               Crypto Moon
             </h1>
-            <h3 className="text-zinc-500 text-md text-center lg:text-justify 2xl:text-xl font-extralight w-full">
+            <h3 className="text-zinc-500 text-md xl:text-lg max-w-[620px] text-center lg:text-justify font-extralight">
               Lörem ipsum soheten kärösade dirar semins. Tadyliga novellix er,
               metromodern post. Heterotassade epipyktiga. Fisat apostat eller
               dev termotyp mononde.
@@ -41,18 +41,18 @@ export const Hero = () => {
 
             {loading ? <HeroInfoLoading /> : ""}
             {data && (
-              <div className="hidden sm:flex sm:mt-10 sm:justify-start sm:items-start sm:flex-row font-light text-zinc-300 gap-20 lg:gap-10 xl:gap-20 md:text-xl text-center lg:text-left md:mb-12 lg:mb-10">
-                <p>
+              <div className="flex flex-col md:flex-row mt-10 sm:justify-start sm:items-start sm:flex-row font-light text-zinc-300 gap-5 md:gap-20 lg:gap-10 xl:gap-20 md:text-xl text-center lg:text-left mb-2">
+                <p className="text-sm xl:text-lg">
                   Cryptos:{" "}
                   <span className="font-bold">
                     {parseInt(data.active_cryptocurrencies).toLocaleString()}
                   </span>
                 </p>
-                <p>
+                <p className="text-sm xl:text-lg">
                   Exchanges:{" "}
                   <span className="font-bold">{parseInt(data.markets)}</span>
                 </p>
-                <p>
+                <p className="text-sm xl:text-lg">
                   Market Cap:{" "}
                   <span className="font-bold">
                     {parseInt(data.total_market_cap.usd).toLocaleString()}$
@@ -60,8 +60,8 @@ export const Hero = () => {
                 </p>
               </div>
             )}
-            <p className="w-full text-md hidden sm:visible sm:flex sm:items-center sm:justify-center lg:justify-start text-zinc-700 uppercase">
-              (Real time data using coingecko api.)
+            <p className="w-full text-sm xl:text-lg hidden sm:visible sm:flex sm:items-center sm:justify-center lg:justify-start text-zinc-700 uppercase">
+              (Real time data using coingecko api)
             </p>
           </div>
         </div>

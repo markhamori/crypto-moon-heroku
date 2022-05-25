@@ -40,16 +40,16 @@ export const CoinList = () => {
   };
 
   return (
-    <section id="coin-list" className="relative overflow-x-hidden bg-zinc-100">
-      <div className="container">
-        <div className="flex flex-col max-h-screen py-10 lg:px-20 md:mb-20">
-          <h1 className="absolute left-10 top-10 sm:top-0 md:top-10 font-bold text-zinc-800 text-[80px] md:text-[150px] opacity-5">
+    <section id="coin-list" className="relative overflow-x-hidden bg-zinc-900">
+      <div className="mx-10">
+        <div className="flex flex-col">
+          <h1 className="hidden md:block sm:absolute left-10 top-0 font-bold text-zinc-100 text-[80px] md:text-[150px] opacity-5">
             Top 50
           </h1>
           <div className="flex items-center justify-center sm:items-end lg:justify-end flex-col md:flex-row md:mt-10">
             <div className="relative flex items-center justify-center">
               <input
-                className="p-1 bg-transparent text-zinc-900 text-sm placeholder-zinc-400 border-2 border-basic rounded-l-md font-light px-2 outline-none"
+                className="p-1 bg-transparent text-zinc-900 text-sm placeholder-zinc-700 border-2 border-basic font-light px-2 outline-none"
                 type="text"
                 name="search"
                 ref={inputEl}
@@ -57,35 +57,42 @@ export const CoinList = () => {
                 placeholder="Enter coin symbol..."
               />
               <FontAwesomeIcon
-                className="text-zinc-100 border-2 rounded-r-md text-sm border-basic bg-basic p-[0.45rem]"
+                className="text-zinc-900 border-2 text-sm border-basic bg-basic p-[0.45rem]"
                 icon={faSearch}
               />
             </div>
           </div>
 
+          <div className="w-full flex items-center justify-center mt-12">
+            <h1 className="text-zinc-300 text-md text-center mb-5 md:mb-0 lg:text-left font-light text-md">
+              Consuming Coingecko API to get real time cryptocurrency market
+              data.
+            </h1>
+          </div>
+
           <div className="grid grid-cols-5 mt-8 md:mt-20 lg:mt-10 lg:mb-5">
             <div className="flex items-center justify-center">
-              <h1 className="text-zinc-900 font-bold text-sm md:text-lg py-4">
+              <h1 className="text-zinc-100 font-bold text-sm md:text-sm py-1">
                 Rank
               </h1>
             </div>
             <div className="flex items-center justify-center">
-              <h1 className="text-zinc-900 font-bold text-sm md:text-lg py-4">
+              <h1 className="text-zinc-100 font-bold text-sm md:text-sm py-1">
                 Symbol
               </h1>
             </div>
             <div className="flex items-center justify-center">
-              <h1 className="text-zinc-900 font-bold text-sm md:text-lg py-4">
+              <h1 className="text-zinc-100 font-bold text-sm md:text-sm py-1">
                 Name
               </h1>
             </div>
             <div className="flex items-center justify-center">
-              <h1 className="text-zinc-900 font-bold text-sm md:text-lg py-4">
+              <h1 className="text-zinc-100 font-bold text-sm md:text-sm py-1">
                 Price
               </h1>
             </div>
             <div className="flex items-center justify-center">
-              <h1 className="text-zinc-900 font-bold text-sm md:text-lg py-4">
+              <h1 className="text-zinc-100 font-bold text-sm md:text-sm py-1">
                 24H%
               </h1>
             </div>
@@ -95,12 +102,12 @@ export const CoinList = () => {
             <div className="flex flex-col flex-1">
               {loading ? <CoinListLoading /> : ""}
 
-              <div className="text-zinc-900 text-lg font-light lg:text-xl space-y-8 md:space-y-16">
+              <div className="text-zinc-100 text-lg font-light lg:text-xl space-y-8 md:space-y-16">
                 <div className="grid grid-rows-5 gap-6 items-center">
                   {filteredCoins
                     ? filteredCoins.map((coin) => (
                         <div
-                          className="flex flex-row items-center justify-center cursor-pointer h-14 hover:bg-zinc-300 transition-all group"
+                          className="flex flex-row items-center justify-center cursor-pointer h-14 hover:bg-zinc-800 transition-all group"
                           key={coin.id}
                           onClick={() => navigate(`coin/${coin.id}`)}
                         >
@@ -180,12 +187,6 @@ export const CoinList = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-full flex items-center justify-center mt-12">
-            <h1 className="text-zinc-500 text-md text-center mb-5 md:mb-0 lg:text-left font-light text-md">
-              Consuming Coingecko API to get real time cryptocurrency market
-              data.
-            </h1>
           </div>
         </div>
       </div>
