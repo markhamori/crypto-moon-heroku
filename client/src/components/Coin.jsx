@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 
 import { SelectedCoin } from "../config/Endpoints";
 import { CoinChart } from "../config/Endpoints";
-import { chartDays } from "../config/days";
+import { chartDays } from "../config/ChartSettings";
 
 import Loading from "../loaders/DefaultLoading.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

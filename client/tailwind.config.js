@@ -7,9 +7,6 @@ module.exports = {
         second: "#E74DFB",
       },
     },
-    fontFamily: {
-      Poppins: ["Poppins, sans-serif"],
-    },
     container: {
       center: true,
       padding: "2rem",

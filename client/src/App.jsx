@@ -1,26 +1,30 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Components
-import { Header } from "./components/Header";
+// import { Header } from "./components/Header";
+import { Aside } from "./components/Aside";
+import { InfoBar } from "./components/Infobar";
+
 import { Hero } from "./components/Hero";
 import { CoinList } from "./components/CoinList";
 import { TopPortfolios } from "./components/TopPortfolios";
 import { Testimonial } from "./components/Testimonial";
 import { CTA } from "./components/CTA";
-import { Footer } from "./components/Footer";
 
 import { Coin } from "./components/Coin";
 
 import MainLayout from "./layout/MainLayout";
 
-// Additional styles
-import "./App.css";
-
 function App() {
   return (
     <Router>
       <MainLayout>
-        <Header />
+        {/* <Header /> */}
+        <div className="flex flex-row">
+          <Aside />
+          <InfoBar />
+          <Hero />
+        </div>
         <Routes>
           <Route exact path="/" element={<Hero />} />
           <Route exact path="/coin-list" element={<CoinList />} />
@@ -30,7 +34,6 @@ function App() {
           <Route exact path="/testimonial" element={<Testimonial />} />
           <Route exact path="/contact" element={<CTA />} />
         </Routes>
-        {/* <Footer /> */}
       </MainLayout>
     </Router>
   );

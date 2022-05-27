@@ -22,48 +22,51 @@ export const Header = () => {
   };
 
   return (
-    <header id="header">
-      <div className="w-full">
-        <div className="container flex flex-col justify-center h-20">
-          <div className="flex flex-row items-center ">
-            <div className="hidden md:flex max-w-[60px]">
-              <Link to="/">
-                <img src={cryptoMoonLogo} alt="crypto-moon-logo" />
-              </Link>
-            </div>
-            <div className="flex flex-grow justify-end">
-              <FontAwesomeIcon
-                className="flex md:hidden text-zinc-100 text-2xl"
-                icon={faBars}
-                onClick={() => showSidebar()}
+    <header id="header" className="border-b-2 border-zinc-800">
+      <div className="container flex h-20 w-full">
+        <div className="flex flex-row items-center">
+          <div className="hidden md:flex items-center flex-row">
+            <Link to="/">
+              <img
+                className="block max-w-[80px]"
+                src={cryptoMoonLogo}
+                alt="crypto-moon-logo"
               />
-            </div>
-
-            <nav>
-              <ul className="hidden md:flex flex-row space-x-5">
-                <Link to="/coin-list">
-                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
-                    Coin list
-                  </li>
-                </Link>
-                <Link to="/top-portfolios">
-                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
-                    Portfolios
-                  </li>
-                </Link>
-                <Link to="/contact">
-                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
-                    Exchanges
-                  </li>
-                </Link>
-                <Link to="/contact">
-                  <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
-                    Contact
-                  </li>
-                </Link>
-              </ul>
-            </nav>
+            </Link>
+            <h1 className="text-zinc-100 text-lg md:mr-10">CryptoMoon</h1>
           </div>
+          <div className="flex flex-grow justify-end">
+            <FontAwesomeIcon
+              className="flex md:hidden text-zinc-100 text-2xl"
+              icon={faBars}
+              onClick={() => showSidebar()}
+            />
+          </div>
+
+          <nav>
+            <ul className="hidden md:flex flex-row space-x-5">
+              <Link to="/coin-list">
+                <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
+                  Coin list
+                </li>
+              </Link>
+              <Link to="/top-portfolios">
+                <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
+                  Portfolios
+                </li>
+              </Link>
+              <Link to="/contact">
+                <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
+                  Exchanges
+                </li>
+              </Link>
+              <Link to="/contact">
+                <li className="text-sm px-5 py-1 text-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 transition-all">
+                  Contact
+                </li>
+              </Link>
+            </ul>
+          </nav>
         </div>
       </div>
 
