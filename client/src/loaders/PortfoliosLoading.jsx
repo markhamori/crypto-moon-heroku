@@ -15,7 +15,6 @@ export const PortfoliosLoading = () => {
         </div>
       </div>
       <div className="grid grid-rows-2 justify-center gap-2 mt-10">
-        <div className="h-10 bg-zinc-200 rounded-lg col-span-1"></div>
         <div className="text-zinc-200 text-xl lg:text-3xl space-x-2">
           <FontAwesomeIcon icon={faStarRegular} />
           <FontAwesomeIcon icon={faStarRegular} />
@@ -25,6 +24,7 @@ export const PortfoliosLoading = () => {
           <FontAwesomeIcon icon={faStarRegular} />
           <FontAwesomeIcon icon={faStarRegular} />
         </div>
+        <div className="h-10 bg-zinc-200 rounded-lg col-span-1"></div>
       </div>
     </div>
   );

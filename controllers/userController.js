@@ -44,7 +44,7 @@ exports.get_allUsers = async (req, res) => {
 
 // Login user
 exports.post_loginUser = async (req, res, next) => {
-  const { email, password } = req.body.formData;
+  const { email, password } = req.body;
 
   try {
     const user = await User.find({ email });
@@ -68,8 +68,9 @@ exports.post_loginUser = async (req, res, next) => {
           msg: "Successfully logged in.",
           token,
           data: {
-            user,
-          },
+		username: user[0].name,
+		email: user[0].email,
+	}
         });
       } else {
         res.status(401).json({

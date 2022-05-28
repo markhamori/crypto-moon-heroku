@@ -6,7 +6,7 @@ import { LoginUser } from "../../config/Endpoints";
 
 import Loading from "../../loaders/DefaultLoading.svg";
 
-export const Login = () => {
+export const Register = () => {
   const { setAuth } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     email: "",
@@ -31,7 +31,7 @@ export const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("Logged in!");
+    console.log("Registered");
     // fetchLogin(formData);
   };
 

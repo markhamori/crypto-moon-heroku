@@ -6,7 +6,7 @@ import blockchain from "../assets/images/blockchain.png";
 
 import { HeroInfoLoading } from "../loaders/HeroInfoLoading";
 
-export const Welcome = () => {
+export const Welcome = ({ email }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -24,7 +24,7 @@ export const Welcome = () => {
     <div id="welcome" className="min-h-screen flex flex-col flex-grow p-10">
       <div className="flex flex-row">
         <div className="flex flex-col items-start justify-center">
-          <h3 className="text-xl text-indigo-400">Welcome on</h3>
+          <h3 className="text-xl text-indigo-400">Welcome {email}</h3>
           <h1 className="text-zinc-700 font-bold max-w-[800px] text-8xl leading-[6.5rem]">
             Crypto Moon Dashboard
           </h1>
