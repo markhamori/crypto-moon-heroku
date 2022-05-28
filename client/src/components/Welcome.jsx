@@ -6,7 +6,7 @@ import blockchain from "../assets/images/blockchain.png";
 
 import { HeroInfoLoading } from "../loaders/HeroInfoLoading";
 
-export const Hero = () => {
+export const Welcome = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,7 +21,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div id="hero" className="min-h-screen flex flex-col flex-grow p-10">
+    <div id="welcome" className="min-h-screen flex flex-col flex-grow p-10">
       <div className="flex flex-row">
         <div className="flex flex-col items-start justify-center">
           <h3 className="text-xl text-indigo-400">Welcome on</h3>

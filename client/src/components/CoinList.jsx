@@ -12,12 +12,11 @@ import { CoinListLoading } from "../loaders/CoinListLoading";
 import { AllCoins } from "../config/Endpoints";
 
 export const CoinList = () => {
-  const navigate = useNavigate();
-
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
+  const navigate = useNavigate();
   const inputEl = useRef(null);
 
   const fetchMarketData = async () => {
@@ -146,7 +145,7 @@ export const CoinList = () => {
                         <div className="w-1/4 sm:w-1/5 text-sm md:text-sm lg:text-md">
                           {Math.floor(
                             coin.market_data
-                              .price_change_percentage_1h_in_currency.usd * 100
+                              .price_change_percentage_24h_in_currency.usd * 100
                           ) /
                             100 >
                           0 ? (

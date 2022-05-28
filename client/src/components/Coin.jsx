@@ -83,8 +83,8 @@ export const Coin = () => {
             )}
           </div>
 
-          <div className="w-full flex flex-col items-center mt-5">
-            <div className="w-4/5">
+          <div className="mt-5">
+            <div className="w-full flex flex-col items-center ">
               {!chartData | loading ? (
                 <img
                   className="w-1/4"
@@ -93,40 +93,42 @@ export const Coin = () => {
                   crossOrigin="true"
                 />
               ) : (
-                <Line
-                  data={{
-                    labels: chartData.map((coin) => {
-                      let date = new Date(coin[0]);
-                      let time =
-                        date.getHours() > 12
-                          ? `${date.getHours() - 12}:${date.getMinutes()}PM`
-                          : `${date.getHours()}:${date.getMinutes()} AM`;
+                <div className="w-4/5">
+                  <Line
+                    data={{
+                      labels: chartData.map((coin) => {
+                        let date = new Date(coin[0]);
+                        let time =
+                          date.getHours() > 12
+                            ? `${date.getHours() - 12}:${date.getMinutes()}PM`
+                            : `${date.getHours()}:${date.getMinutes()} AM`;
 
-                      return days === 1 ? time : date.toLocaleDateString();
-                    }),
+                        return days === 1 ? time : date.toLocaleDateString();
+                      }),
 
-                    datasets: [
-                      {
-                        data: chartData.map((coin) => coin[1]),
-                        label: `Price ( Past ${days} Days ) in ${currency}`,
-                        borderColor: "#818CF8",
-                        borderWidth: 2,
+                      datasets: [
+                        {
+                          data: chartData.map((coin) => coin[1]),
+                          label: `Price ( Past ${days} Days ) in ${currency}`,
+                          borderColor: "#818CF8",
+                          borderWidth: 2,
+                        },
+                      ],
+                    }}
+                    options={{
+                      plugins: {
+                        legend: {
+                          display: false,
+                        },
                       },
-                    ],
-                  }}
-                  options={{
-                    plugins: {
-                      legend: {
-                        display: false,
+                      elements: {
+                        point: {
+                          radius: 2,
+                        },
                       },
-                    },
-                    elements: {
-                      point: {
-                        radius: 2,
-                      },
-                    },
-                  }}
-                />
+                    }}
+                  />
+                </div>
               )}
             </div>
           </div>

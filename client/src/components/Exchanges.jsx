@@ -33,7 +33,7 @@ export const Exchanges = () => {
           <div className="flex flex-col lg:items-start lg:justify-between">
             <div className="flex flex-col">
               <h1 className="text-3xl font-bold">Exchanges</h1>
-              <p className="text-sm">Top 30 exchanges by trust score.</p>
+              <p className="text-sm">Top 30 exchanges by trust score rank.</p>
             </div>
           </div>
         </div>
@@ -53,14 +53,16 @@ export const Exchanges = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="flex flex-col w-[250px] items-center justify-center hover:bg-zinc-200 transition-all p-2">
+                <div className="flex flex-col w-[250px] items-center justify-center hover:bg-zinc-200 hover:scale-105 transition-all p-4 group">
+                  <img
+                    className="max-w-[20px] grayscale group-hover:grayscale-0"
+                    src={d.image}
+                    alt={d.name}
+                  />
                   <h1 className="text-lg">{d.name}</h1>
-
-                  <p className="text-zinc-500 text-xs mb-2 uppercase">
-                    Trust Score
-                  </p>
-                  <span className="px-[12px] py-[1px] text-lg bg-indigo-400 text-zinc-100 rounded">
-                    {d.trust_score}
+                  <p className="text-xs mb-1">Since {d.year_established}</p>
+                  <span className="px-2 py-[1px] text-sm text-zinc-900 bg-zinc-200 rounded-full">
+                    {d.trust_score_rank}
                   </span>
                 </div>
               </a>

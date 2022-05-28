@@ -3,7 +3,6 @@ import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
 import { PortfoliosLoading } from "../loaders/PortfoliosLoading";
 
@@ -16,6 +15,7 @@ export const TopPortfolios = () => {
   const fetchPortfolios = async () => {
     const { data } = await axios.get(GetPortfolios());
     setData(data.portfolios);
+    console.log(data.portfolios);
     setLoading(false);
   };
 
