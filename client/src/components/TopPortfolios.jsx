@@ -24,91 +24,81 @@ export const TopPortfolios = () => {
   }, []);
 
   return (
-    <section id="top-portfolios">
-      <div className="container">
-        <div className="flex flex-col items-center justify-center p-10 min-h-full md:min-h-screen">
-          <h1 className="text-3xl text-center sm:text-4xl font-bold text-zinc-100 py-10">
-            Portfolios from database
-          </h1>
-          <div className="flex flex-col items-center justify-center md:flex-row md:space-x-5 xl:space-x-10 mt-10">
-            {loading ? <PortfoliosLoading /> : ""}
+    <div id="top-portfolios" className="min-h-screen flex flex-col flex-grow">
+      <div className="flex flex-col justify-start p-10 h-screen">
+        <div className="mb-2">
+          <p className="text-xs font-light text-zinc-400">
+            Pages / <span className="font-semibold">top-portfolios</span>
+          </p>
+        </div>
+        <div className="flex flex-col">
+          <h1 className="text-3xl font-bold">Top portfolios</h1>
+          <p className="text-sm">Top portfolios from database by our users.</p>
+        </div>
+        <div className="flex flex-col items-center justify-center md:flex-row md:space-x-5 xl:space-x-10 mt-10">
+          {loading ? <PortfoliosLoading /> : ""}
 
-            {data
-              ? data.map((data, index) => (
-                  <div className="pb-5" key={data[index]}>
-                    <div className="w-64 h-96 md:w-[240px] lg:w-[280px] lg:h-[450px] border-2 rounded-xl border-basic p-5">
-                      <div className="flex flex-col text-center">
-                        <h2 className="text-zinc-100 text-lg font-bold">
-                          Creator:
-                        </h2>
-                        <p className="text-zinc-300 text-sm font-light">
-                          John Doe
-                        </p>
-                      </div>
-                      <div className="flex flex-col text-center pt-2">
-                        <h2 className="text-zinc-100 text-lg font-bold">
-                          Description:
-                        </h2>
-                        <p className="text-zinc-300 text-sm font-light">
-                          {data.portfolioName}
-                        </p>
-                      </div>
-                      <div className="flex flex-col text-center pt-2">
-                        <h2 className="text-zinc-100 text-lg font-bold">
-                          Create date:
-                        </h2>
-                        <p className="text-zinc-300 text-sm font-light">
-                          {data.createdAt.slice(0, 10).replaceAll("-", ".")}
-                        </p>
-                      </div>
-                      <div className="flex flex-col text-center pt-2">
-                        <h2 className="text-zinc-100 text-lg font-bold">
-                          Coins:
-                        </h2>
-                        {data.coins.map((coin, index) => (
-                          <p
-                            key={coin[index]}
-                            className="text-zinc-300 text-sm font-light"
-                          >
-                            {coin}
-                          </p>
-                        ))}
-                      </div>
+          {data
+            ? data.map((data, index) => (
+                <div className="pb-5" key={index}>
+                  <div className="w-[200px] h-[300px] border-2 rounded-xl border-indigo-400 p-5">
+                    <div className="flex flex-col">
+                      <h2 className="text-zinc-600 text-base font-bold">
+                        Creator:
+                      </h2>
+                      <p className="text-zinc-500 text-sm font-light">
+                        John Doe
+                      </p>
                     </div>
-                    <div className="flex flex-col items-center justify-center mt-5">
-                      <h1 className="text-zinc-200 text-lg md:text-xl font-light">
+                    <div className="flex flex-col pt-2">
+                      <h2 className="text-zinc-600 text-base font-bold">
+                        Description:
+                      </h2>
+                      <p className="text-zinc-500 text-sm font-light">
                         {data.portfolioName}
-                      </h1>
-                      <div className="text-basic text-lg space-x-2 space-y-4">
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <span className="text-3xl">
-                          <FontAwesomeIcon icon={faStar} />
-                        </span>
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                      </div>
+                      </p>
+                    </div>
+                    <div className="flex flex-col pt-2">
+                      <h2 className="text-zinc-600 text-base font-bold">
+                        Create date:
+                      </h2>
+                      <p className="text-zinc-500 text-sm font-light">
+                        {data.createdAt.slice(0, 10).replaceAll("-", ".")}
+                      </p>
+                    </div>
+                    <div className="flex flex-col pt-2">
+                      <h2 className="text-zinc-600 text-base font-bold">
+                        Coins:
+                      </h2>
+                      {data.coins.map((coin, index) => (
+                        <p
+                          key={index}
+                          className="text-zinc-500 text-sm font-light"
+                        >
+                          {coin}
+                        </p>
+                      ))}
                     </div>
                   </div>
-                ))
-              : ""}
-          </div>
-          <div className="relative w-full flex items-center justify-center mt-12">
-            <h1 className="text-zinc-500 text-md text-center mb-5 md:mb-0 md:text-left font-extralight text-md mr-2">
-              Consuming data from backend{" "}
-              <span className="font-semibold">
-                <a
-                  href="https://documenter.getpostman.com/view/16898158/UVysxFzY"
-                  target="_blank"
-                >
-                  endpoint(s)
-                </a>
-              </span>
-              .
-            </h1>
-          </div>
+                  <div className="flex flex-col items-center justify-center mt-5">
+                    <div className="text-indigo-400 text-lg space-x-2 space-y-4">
+                      <FontAwesomeIcon icon={faStar} />
+                      <FontAwesomeIcon icon={faStar} />
+                      <span className="text-3xl">
+                        <FontAwesomeIcon icon={faStar} />
+                      </span>
+                      <FontAwesomeIcon icon={faStar} />
+                      <FontAwesomeIcon icon={faStar} />
+                    </div>
+                    <h1 className="text-zinc-900 text-lg md:text-xl font-light">
+                      {data.portfolioName}
+                    </h1>
+                  </div>
+                </div>
+              ))
+            : ""}
         </div>
       </div>
-    </section>
+    </div>
   );
 };

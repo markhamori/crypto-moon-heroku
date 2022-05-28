@@ -10,7 +10,7 @@ export const InfoBar = () => {
           open ? "w-screen" : "w-52"
         } h-screen bg-zinc-800 border-r-[1.5px] border-zinc-700`}
       >
-        <div className="flex flex-col justify-center space-y-5 px-5">
+        <div className="flex flex-col justify-center space-y-10 px-5">
           <div className="flex flex-col justify-center">
             <h1 className="text-zinc-200 text-left text-base pb-2">
               Hello, <span className="font-bold">Mark</span>

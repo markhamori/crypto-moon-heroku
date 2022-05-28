@@ -45,10 +45,19 @@ export const CoinList = () => {
       className="min-h-screen flex flex-grow justify-center items-center"
     >
       <div className="flex flex-col h-screen w-full p-10">
-        <div className="flex items-center justify-center sm:items-end lg:justify-end flex-col md:flex-row">
-          <div className="relative h-8 flex items-center justify-center bg-indigo-500 rounded-full">
+        <div className="mb-2">
+          <p className="text-xs font-light text-zinc-400">
+            Pages / <span className="font-semibold">coin-list</span>
+          </p>
+        </div>
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-col">
+            <h1 className="text-3xl font-bold">Cryptocurrencies</h1>
+            <p className="text-sm">Select from the coins under.</p>
+          </div>
+          <div className="relative h-8 flex items-center justify-center bg-indigo-400 rounded-full">
             <input
-              className="bg-transparent text-zinc-100 text-sm placeholder-indigo-300 bg-indigo-500 font-light px-3 outline-none"
+              className="bg-transparent text-zinc-100 text-sm placeholder-indigo-200 bg-indigo-400 font-light px-3 ml-4 outline-none"
               type="text"
               name="search"
               ref={inputEl}
@@ -56,7 +65,7 @@ export const CoinList = () => {
               placeholder="Enter coin symbol..."
             />
             <FontAwesomeIcon
-              className="text-zinc-100 text-sm bg-indigo-500 px-[0.8rem] rounded-full"
+              className="text-zinc-100 text-sm bg-indigo-400 px-[0.8rem] rounded-full"
               icon={faSearch}
             />
           </div>
@@ -135,7 +144,7 @@ export const CoinList = () => {
                           )}
                         </div>
                         <div className="w-1/4 sm:w-1/5 text-sm md:text-sm lg:text-md">
-                          {Math.round(
+                          {Math.floor(
                             coin.market_data
                               .price_change_percentage_1h_in_currency.usd * 100
                           ) /

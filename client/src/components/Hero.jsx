@@ -21,45 +21,40 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div
-      id="hero"
-      className="min-h-screen flex items-center justify-center flex-grow p-10"
-    >
-      <div className="flex flex-row justify-center items-center">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-zinc-900 font-semibold text-8xl leading-2 mb-5">
-            Crypto Moon
+    <div id="hero" className="min-h-screen flex flex-col flex-grow p-10">
+      <div className="flex flex-row">
+        <div className="flex flex-col items-start justify-center">
+          <h3 className="text-xl text-indigo-400">Welcome on</h3>
+          <h1 className="text-zinc-700 font-bold max-w-[800px] text-8xl leading-[6.5rem]">
+            Crypto Moon Dashboard
           </h1>
-          <h3 className="text-zinc-500 text-md xl:text-lg max-w-[620px] text-center font-extralight">
-            Lörem ipsum soheten kärösade dirar semins. Tadyliga novellix er,
-            metromodern post. Heterotassade epipyktiga. Fisat apostat eller dev
-            termotyp mononde.
+          <h3 className="text-zinc-500 text-lg font-extralight">
+            Check cryptocurrency prices.
           </h3>
 
           {loading ? <HeroInfoLoading /> : ""}
           {data && (
-            <div className="flex flex-col md:flex-row mt-10 sm:justify-start sm:items-start sm:flex-row font-light text-zinc-700 gap-5 md:gap-20 lg:gap-10 xl:gap-20 md:text-xl text-center lg:text-left mb-2">
-              <p className="text-sm xl:text-lg">
-                Cryptos:{" "}
-                <span className="font-bold">
+            <div className="flex flex-col font-extralight text-zinc-500 gap-1 mt-10">
+              <p className="text-lg">
+                All cryptocurrencies:{" "}
+                <span className="font-bold text-zinc-700">
                   {parseInt(data.active_cryptocurrencies).toLocaleString()}
                 </span>
               </p>
-              <p className="text-sm xl:text-lg">
-                Exchanges:{" "}
-                <span className="font-bold">{parseInt(data.markets)}</span>
+              <p className="text-lg">
+                All exchanges:{" "}
+                <span className="font-bold text-zinc-700">
+                  {parseInt(data.markets)}
+                </span>
               </p>
-              <p className="text-sm xl:text-lg">
-                Market Cap:{" "}
-                <span className="font-bold">
+              <p className="text-lg ">
+                Total Market Cap:{" "}
+                <span className="font-bold text-zinc-700">
                   {parseInt(data.total_market_cap.usd).toLocaleString()}$
                 </span>
               </p>
             </div>
           )}
-          <p className="text-sm text-center text-zinc-700 uppercase">
-            (Real time data using coingecko api)
-          </p>
         </div>
       </div>
     </div>

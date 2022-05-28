@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { AllExchanges } from "../config/Endpoints";
 
-import creditCard from "../assets/images/credit-card.svg";
-import guardLogo from "../assets/images/guard-logo.svg";
 import Loading from "../loaders/DefaultLoading.svg";
 
 export const Exchanges = () => {
@@ -21,83 +19,54 @@ export const Exchanges = () => {
   }, []);
 
   return (
-    <div className="relative">
-      <div className="absolute left-0 top-0 w-full h-screen blur-[300px] opacity-20 bg-basic" />
-      <section id="exchanges" className="relative bg-zinc-900">
-        <div className="container">
-          <div className="flex flex-col justify-center min-h-screen">
-            <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0">
-              <div className="flex flex-col lg:items-start lg:justify-between">
-                <div className="">
-                  <h1 className="text-zinc-100 font-semibold text-center lg:text-left text-3xl lg:text-5xl mb-5 mt-10">
-                    Exchanges
-                  </h1>
-                  <h2 className="text-zinc-400 text-xl lg:text-xl lg:w-2/3 font-light text-center lg:text-left w-full">
-                    Lörem ipsum kroment teofoni emedan ed. Jyl wikiläcka, fast
-                    ultrabir, och terangar. Ber tåmurad dengen.{" "}
-                  </h2>
-                </div>
-
-                <div className="w-full flex flex-col md:flex-row justify-evenly">
-                  <div className="flex w-full items-center justify-evenly mt-20 lg:mt-10">
-                    <h2 className="absolute text-xl lg:text-2xl text-teal-500 py-1 px-3 rounded bg-zinc-800">
-                      Reliable Service
-                    </h2>
-                    <img className="w-32 lg:w-32" src="" alt="guard-logo" />
-                  </div>
-                  <div className="flex w-full items-center justify-evenly mt-20 lg:mt-10">
-                    <h2 className="absolute text-2xl lg:text-4xl text-second py-1 px-3 rounded bg-zinc-200">
-                      Safe & Secure
-                    </h2>
-                    <img className="w-32 lg:w-fit" src="" alt="guard-logo" />
-                  </div>
-                  <div className="flex w-full items-center justify-evenly mt-20 lg:mt-10">
-                    <h2 className="absolute text-xl lg:text-2xl text-teal-500 py-1 px-3 rounded bg-zinc-800">
-                      Trustworthy
-                    </h2>
-                    <img className="w-32 lg:w-32" src="" alt="guard-logo" />
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <img
-                  className="hidden lg:w-full lg:h-full lg:block"
-                  src=""
-                  alt="credit-card"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col text-zinc-200 justify-evenly text-2xl md:flex-row mb-12 md:mb-0 md:mt-10 lg:mt-20 lg:mb-16">
-              {loading ? (
-                <div className="w-full flex items-center justify-center">
-                  <img className="lg:w-2/8" src={Loading} alt="loading" />
-                </div>
-              ) : (
-                ""
-              )}
-              {data &&
-                data.slice(0, 3).map((d, i) => (
-                  <a
-                    href={d.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={i}
-                  >
-                    <div className="w-full inline-flex flex-col flex-1 items-center justify-center">
-                      <h1 className="text-2xl lg:text-3xl mt-4">{d.name}</h1>
-                      <p className="text-zinc-500 text-sm mb-4 uppercase">
-                        Trust Score
-                      </p>
-                      <span className="px-4 py-1 text-2xl lg:text-3xl bg-teal-400 text-zinc-800 rounded">
-                        {d.trust_score}
-                      </span>
-                    </div>
-                  </a>
-                ))}
+    <div
+      id="exchanges"
+      className="min-h-screen flex flex-grow justify-center items-center"
+    >
+      <div className="flex flex-col h-screen w-full p-10">
+        <div className="mb-2">
+          <p className="text-xs font-light text-zinc-400">
+            Pages / <span className="font-semibold">exchanges</span>
+          </p>
+        </div>
+        <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0">
+          <div className="flex flex-col lg:items-start lg:justify-between">
+            <div className="flex flex-col">
+              <h1 className="text-3xl font-bold">Exchanges</h1>
+              <p className="text-sm">Top 30 exchanges by trust score.</p>
             </div>
           </div>
         </div>
-      </section>
+        <div className="flex flex-row flex-wrap text-zinc-900 text-2xl mt-10 overflow-x-hidden">
+          {loading ? (
+            <div className="w-full flex items-center justify-center">
+              <img className="lg:w-2/8" src={Loading} alt="loading" />
+            </div>
+          ) : (
+            ""
+          )}
+          {data &&
+            data.slice(0, 30).map((d, i) => (
+              <a
+                key={d.name}
+                href={d.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex flex-col w-[250px] items-center justify-center hover:bg-zinc-200 transition-all p-2">
+                  <h1 className="text-lg">{d.name}</h1>
+
+                  <p className="text-zinc-500 text-xs mb-2 uppercase">
+                    Trust Score
+                  </p>
+                  <span className="px-[12px] py-[1px] text-lg bg-indigo-400 text-zinc-100 rounded">
+                    {d.trust_score}
+                  </span>
+                </div>
+              </a>
+            ))}
+        </div>
+      </div>
     </div>
   );
 };

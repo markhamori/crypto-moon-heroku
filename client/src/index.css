@@ -30,15 +30,15 @@ body {
 }
 
 .page-transition {
-  animation: pageTransition 1s linear;
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right both;
 }
 
-@keyframes pageTransition {
-  0% {
-    opacity: 0;
+@keyframes circle-in-top-right {
+  from {
+    clip-path: circle(0%);
   }
-  100% {
-    opacity: 100;
+  to {
+    clip-path: circle(150% at top right);
   }
 }
 

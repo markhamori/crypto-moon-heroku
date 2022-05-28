@@ -7,6 +7,8 @@ import { InfoBar } from "./components/Infobar";
 
 import { Hero } from "./components/Hero";
 import { CoinList } from "./components/CoinList";
+import { Exchanges } from "./components/Exchanges";
+
 import { TopPortfolios } from "./components/TopPortfolios";
 import { Testimonial } from "./components/Testimonial";
 import { CTA } from "./components/CTA";
@@ -19,14 +21,14 @@ function App() {
       <div className="flex flex-row">
         <div className="flex flex-row">
           <Aside />
-          <InfoBar />
+          {/* <InfoBar /> */}
         </div>
         <div className="flex flex-row flex-grow">
           <Routes>
             <Route exact path="/" element={<Hero />} />
             <Route exact path="/coin-list" element={<CoinList />} />
             <Route exact path="/coin-list/coin/:id" element={<Coin />} />
-            {/* <Route exact path="/exchanges" element={<Exchanges />} /> */}
+            <Route exact path="/exchanges" element={<Exchanges />} />
             <Route exact path="/top-portfolios" element={<TopPortfolios />} />
             <Route exact path="/testimonial" element={<Testimonial />} />
             <Route exact path="/contact" element={<CTA />} />

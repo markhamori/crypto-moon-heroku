@@ -42,7 +42,10 @@ export const Coin = () => {
 
   return (
     <div id="coin" className="h-screen overflow-hidden p-10 flex-grow">
-      <div className="flex justify-end items-center w-fit">
+      <div className="flex justify-between">
+        <p className="text-xs font-light text-zinc-400">
+          Pages / coin-list / coin / <span className="font-semibold">{id}</span>
+        </p>
         <button
           type="button"
           className="h-8 px-[1.2rem] font-light bg-indigo-500 rounded-full text-zinc-100 hover:bg-indigo-400 transition-all"
@@ -51,51 +54,43 @@ export const Coin = () => {
           Back to the list
         </button>
       </div>
-      <div className="relative flex flex-col items-center justify-center mt-5">
-        <div className="w-full flex flex-col items-center">
-          <div className="flex flex-col items-center justify-center">
+
+      <div className="relative flex flex-col items-center justify-center mt-2">
+        <div className="w-full flex flex-col">
+          <div className="flex flex-col justify-center items-start uppercase">
             {selectedCoin && (
               <>
                 <div className="flex items-center flex-row space-x-4 group transition-all">
-                  <h1 className="text-zinc-700 font-bold text-4xl lg:text-5xl">
-                    {id.toUpperCase()}
+                  <h1 className="text-3xl font-bold">
+                    {id}{" "}
+                    <span className="font-extralight">
+                      {selectedCoin.symbol}
+                    </span>
                   </h1>
                 </div>
 
-                <h2 className="text-zinc-800 text-base text-left">
-                  {selectedCoin.symbol.toUpperCase()}
-                </h2>
-                <h2 className="text-zinc-800 text-base text-left">
+                <h2 className="text-zinc-800 text-sm">
                   Market Cap Rank:{" "}
-                  <span className="font-bold">
+                  <span className="font-bold text-zinc-100 bg-indigo-400 rounded-full px-2">
                     {selectedCoin.market_cap_rank}
                   </span>
                 </h2>
 
-                <a
-                  className="group"
-                  href={selectedCoin.links.homepage[0]}
-                  target="_blank"
-                >
-                  <p className="text-base text-center text-zinc-800 ">
-                    <span className="group-hover:text-zinc-400 transition-all">
-                      <FontAwesomeIcon className="pr-2" icon={faLink} />
-                    </span>
-                    Webpage
-                  </p>
+                <a href={selectedCoin.links.homepage[0]} target="_blank">
+                  <p className="text-sm text-center text-zinc-500">Website</p>
                 </a>
               </>
             )}
           </div>
 
-          <div className="w-full flex flex-col items-center justify-center mt-5">
+          <div className="w-full flex flex-col items-center mt-5">
             <div className="w-4/5">
               {!chartData | loading ? (
                 <img
                   className="w-1/4"
                   src={Loading}
                   alt="loading"
-                  crossorigin
+                  crossOrigin="true"
                 />
               ) : (
                 <Line
@@ -137,7 +132,7 @@ export const Coin = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-wrap md:flex-row items-center justify-evenly md:mb-10 mb-10 lg:mt-5">
+      <div className="w-full flex flex-wrap justify-center items-center space-x-5 mt-5">
         {chartDays.map((day) => (
           <button
             className="h-8 px-[2rem] text-zinc-100 text-sm rounded-full bg-indigo-500 hover:bg-indigo-400 transition-all"
