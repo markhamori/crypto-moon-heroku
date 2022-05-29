@@ -62,7 +62,7 @@ exports.post_loginUser = async (req, res, next) => {
             .header("access-control-expose-headers", "x-auth-token")
             .header("Access-Control-Allow-Origin", "http://localhost:3000")
             .header("Access-Control-Allow-Credentials", true);
-          res.cookie("jwt", token, {
+          res.cookie("jwt-cryptomoon", token, {
             expires: new Date(
               Date.now() +
                 process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
@@ -70,10 +70,6 @@ exports.post_loginUser = async (req, res, next) => {
             secure: false,
             httpOnly: true,
           });
-
-          console.log(req.cookies);
-
-          user.password = undefined;
 
           res.status(200).json({
             status: "200",

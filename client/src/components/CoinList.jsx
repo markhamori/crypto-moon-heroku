@@ -49,12 +49,12 @@ export const CoinList = () => {
             Pages / <span className="font-semibold">coin-list</span>
           </p>
         </div>
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
           <div className="flex flex-col">
             <h1 className="text-3xl font-bold">Cryptocurrencies</h1>
             <p className="text-sm">Select from the coins under.</p>
           </div>
-          <div className="relative h-8 flex items-center justify-center bg-indigo-400 rounded-full">
+          <div className="relative h-8 flex items-center justify-center bg-indigo-400 rounded-full mt-5 md:mt-0">
             <input
               className="bg-transparent text-zinc-100 text-sm placeholder-indigo-200 bg-indigo-400 font-light px-3 ml-4 outline-none"
               type="text"

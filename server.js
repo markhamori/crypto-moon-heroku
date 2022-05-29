@@ -32,11 +32,8 @@ app.use(express.json({ limit: "10kb" }));
 
 app.use(cookieParser());
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());

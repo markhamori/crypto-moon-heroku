@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GlobalStats } from "../config/Endpoints";
 
-import blockchain from "../assets/images/blockchain.png";
-
 import { HeroInfoLoading } from "../loaders/HeroInfoLoading";
 
 export const Welcome = ({ email }) => {
@@ -23,31 +21,30 @@ export const Welcome = ({ email }) => {
   return (
     <div id="welcome" className="min-h-screen flex flex-col flex-grow p-10">
       <div className="flex flex-row">
-        <div className="flex flex-col items-start justify-center">
-          <h3 className="text-xl text-indigo-400">Welcome {email}</h3>
-          <h1 className="text-zinc-700 font-bold max-w-[800px] text-8xl leading-[6.5rem]">
-            Crypto Moon Dashboard
+        <div className="flex flex-col items-center md:items-start justify-center">
+          <h1 className="text-zinc-700 font-bold max-w-[800px] text-4xl text-center md:text-left md:text-8xl md:leading-[6.5rem] mb-5">
+            Crypto Moon Application
           </h1>
-          <h3 className="text-zinc-500 text-lg font-extralight">
+          <h3 className="text-zinc-500 text-sm md:text-lg text-center md:text-left font-extralight">
             Check cryptocurrency prices.
           </h3>
 
           {loading ? <HeroInfoLoading /> : ""}
           {data && (
             <div className="flex flex-col font-extralight text-zinc-500 gap-1 mt-10">
-              <p className="text-lg">
+              <p className="text-sm md:text-lg text-center md:text-left">
                 All cryptocurrencies:{" "}
                 <span className="font-bold text-zinc-700">
                   {parseInt(data.active_cryptocurrencies).toLocaleString()}
                 </span>
               </p>
-              <p className="text-lg">
+              <p className="text-sm md:text-lg text-center md:text-left">
                 All exchanges:{" "}
                 <span className="font-bold text-zinc-700">
                   {parseInt(data.markets)}
                 </span>
               </p>
-              <p className="text-lg ">
+              <p className="text-sm md:text-lg text-center md:text-left ">
                 Total Market Cap:{" "}
                 <span className="font-bold text-zinc-700">
                   {parseInt(data.total_market_cap.usd).toLocaleString()}$

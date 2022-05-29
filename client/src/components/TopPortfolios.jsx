@@ -24,7 +24,7 @@ export const TopPortfolios = () => {
 
   return (
     <div id="top-portfolios" className="min-h-screen flex flex-col flex-grow">
-      <div className="flex flex-col justify-start p-10 h-screen">
+      <div className="flex flex-col justify-start p-10 h-screen overflow-x-hidden">
         <div className="mb-2">
           <p className="text-xs font-light text-zinc-400">
             Pages / <span className="font-semibold">top-portfolios</span>

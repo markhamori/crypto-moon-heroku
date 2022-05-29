@@ -47,20 +47,10 @@ export const Aside = () => {
               </div>
             </Link>
             <div className="bg-indigo-500 p-2 rounded-full hover:bg-indigo-400 cursor-pointer transition-all">
-              <AiOutlineInfo className="text-zinc-100 text-2xl" />
+              <Link to="/information">
+                <AiOutlineInfo className="text-zinc-100 text-2xl" />
+              </Link>
             </div>
-          </div>
-          <div className="flex flex-col space-y-5 mb-10">
-            <Link to="/login">
-              <div className="bg-indigo-500 p-2 rounded-full hover:bg-indigo-400 cursor-pointer transition-all">
-                <AiOutlineLogin className="text-zinc-100 text-2xl" />
-              </div>
-            </Link>
-            <Link to="/register">
-              <div className="bg-indigo-500 p-2 rounded-full hover:bg-indigo-400 cursor-pointer transition-all">
-                <AiOutlineUserAdd className="text-zinc-100 text-2xl" />
-              </div>
-            </Link>
           </div>
         </div>
       </div>

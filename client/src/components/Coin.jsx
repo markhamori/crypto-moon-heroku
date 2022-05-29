@@ -42,13 +42,13 @@ export const Coin = () => {
 
   return (
     <div id="coin" className="h-screen overflow-hidden p-10 flex-grow">
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row justify-between">
         <p className="text-xs font-light text-zinc-400">
           Pages / coin-list / coin / <span className="font-semibold">{id}</span>
         </p>
         <button
           type="button"
-          className="h-8 px-[1.2rem] font-light bg-indigo-500 rounded-full text-zinc-100 hover:bg-indigo-400 transition-all"
+          className="h-8 px-[1.2rem] w-fit font-light bg-indigo-500 rounded-full text-zinc-100 hover:bg-indigo-400 transition-all mt-2 md:mt-0"
           onClick={() => navigate(`/coin-list`)}
         >
           Back to the list
@@ -134,10 +134,10 @@ export const Coin = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-wrap justify-center items-center space-x-5 mt-5">
+      <div className="w-full flex flex-wrap justify-center items-center md:space-x-5 mt-5">
         {chartDays.map((day) => (
           <button
-            className="h-8 px-[2rem] text-zinc-100 text-sm rounded-full bg-indigo-500 hover:bg-indigo-400 transition-all"
+            className="h-8 px-[2rem] text-zinc-100 text-sm rounded-full bg-indigo-500 hover:bg-indigo-400 transition-all mt-5 md:mt-0 mr-5 md:mr-0"
             key={day.value}
             onClick={() => {
               setDays(day.value);
