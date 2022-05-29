@@ -15,7 +15,6 @@ export const TopPortfolios = () => {
   const fetchPortfolios = async () => {
     const { data } = await axios.get(GetPortfolios());
     setData(data.portfolios);
-    console.log(data.portfolios);
     setLoading(false);
   };
 

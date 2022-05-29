@@ -7,6 +7,7 @@ const userRouter = require("./routes/userRoutes");
 const portfolioRouter = require("./routes/portfolioRoutes");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
@@ -28,6 +29,8 @@ app.use("/api", limiter);
 app.use(xss());
 
 app.use(express.json({ limit: "10kb" }));
+
+app.use(cookieParser());
 
 app.use(
   cors({

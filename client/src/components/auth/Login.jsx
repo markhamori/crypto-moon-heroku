@@ -31,21 +31,23 @@ export const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("Logged in!");
-    // fetchLogin(formData);
+    fetchLogin(formData);
   };
 
   const fetchLogin = async (inputData) => {
-    const { data } = await axios.post(LoginUser(), inputData, config);
-    setLoading(false);
-    if (!data.token) {
-      setWarningMsg(data.msg);
-    } else {
+    try {
+      const { data } = await axios.post(LoginUser(), inputData, config);
+      setLoading(false);
       setAuth(data.data);
       setSuccessMsg(data.msg);
+      setWarningMsg("");
       setTimeout(() => {
         navigate("/");
       }, 3000);
+    } catch (err) {
+      setSuccessMsg("");
+      setWarningMsg(err.response.data.msg);
+      console.log(err);
     }
   };
 
@@ -98,8 +100,12 @@ export const Login = () => {
               value="Login"
             />
           </form>
-          {successMsg && <p>{successMsg}</p>}
-          {warningMsg && <p>{warningMsg}</p>}
+          {successMsg && (
+            <p className="text-sm text-indigo-400 mt-2">{successMsg}</p>
+          )}
+          {warningMsg && (
+            <p className="text-sm text-indigo-400 mt-2">{warningMsg}</p>
+          )}
           <p className="text-sm text-zinc-400 font-extralight mt-2">
             Don't have an account?{" "}
             <Link to="/register">

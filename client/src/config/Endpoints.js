@@ -20,3 +20,5 @@ export const GetAUserById = (uid) =>
   `https://crypto-moon-mark.herokuapp.com/api/v1/users/${uid}`;
 
 export const LoginUser = () => `http://localhost:5000/api/v1/users/login`;
+
+export const RegisterUser = () => `http://localhost:5000/api/v1/users/register`;

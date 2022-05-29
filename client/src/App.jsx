@@ -9,6 +9,7 @@ import { Coin } from "./components/Coin";
 import { Exchanges } from "./components/Exchanges";
 import { TopPortfolios } from "./components/TopPortfolios";
 import { Login } from "./components/auth/Login";
+import { Register } from "./components/auth/Register";
 
 import AppContext from "./context/AuthProvider";
 
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/exchanges" element={<Exchanges />} />
             <Route exact path="/top-portfolios" element={<TopPortfolios />} />
             <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
           </Routes>
         </main>
       </div>

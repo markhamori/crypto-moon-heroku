@@ -47,40 +47,54 @@ exports.post_loginUser = async (req, res, next) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.find({ email });
-    bcrypt.compare(password, user[0].password, function (err, result) {
-      if (result === true) {
-        const token = createToken(user._id);
-        res
-          .header("x-auth-token", token)
-          .header("access-control-expose-headers", "x-auth-token")
-          .header("Access-Control-Allow-Origin", "http://localhost:3000")
-          .header("Access-Control-Allow-Credentials", true);
-        res.cookie("jwt", token, {
-          expires: new Date(
-            Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-          ),
-          secure: false,
-          httpOnly: true,
-        });
-        res.status(200).json({
-          status: "200",
-          msg: "Successfully logged in.",
-          token,
-          data: {
-		username: user[0].name,
-		email: user[0].email,
-	}
-        });
-      } else {
-        res.status(401).json({
-          status: "401",
-          msg: "Wrong credentials! Try again.",
-        });
-      }
-    });
+    const user = await User.findOne({ email });
+    if (!user) {
+      res.status(401).json({
+        status: "401",
+        msg: "Email address not found. Try again or register an account.",
+      });
+    } else {
+      bcrypt.compare(password, user.password, function (err, result) {
+        if (result === true) {
+          const token = createToken(user._id);
+          res
+            .header("x-auth-token", token)
+            .header("access-control-expose-headers", "x-auth-token")
+            .header("Access-Control-Allow-Origin", "http://localhost:3000")
+            .header("Access-Control-Allow-Credentials", true);
+          res.cookie("jwt", token, {
+            expires: new Date(
+              Date.now() +
+                process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+            ),
+            secure: false,
+            httpOnly: true,
+          });
+
+          console.log(req.cookies);
+
+          user.password = undefined;
+
+          res.status(200).json({
+            status: "200",
+            msg: "Successfully logged in.",
+            token,
+            data: {
+              username: user.username,
+              email: user.email,
+              name: user.name,
+            },
+          });
+        } else {
+          res.status(401).json({
+            status: "401",
+            msg: "Wrong credentials! Try again.",
+          });
+        }
+      });
+    }
   } catch (err) {
-    console.log(err);
+    console.log(err.message);
   }
 };
 
