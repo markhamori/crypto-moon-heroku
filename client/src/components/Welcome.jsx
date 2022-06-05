@@ -3,8 +3,9 @@ import axios from "axios";
 import { GlobalStats } from "../config/Endpoints";
 
 import { HeroInfoLoading } from "../loaders/HeroInfoLoading";
+import Illustration from "../assets/images/Illustration.svg";
 
-export const Welcome = ({ email }) => {
+export const Welcome = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -20,6 +21,9 @@ export const Welcome = ({ email }) => {
 
   return (
     <div id="welcome" className="min-h-screen flex flex-col flex-grow p-10">
+      <div className="absolute max-w-[250px] md:max-w-xs flex items-center justify-center right-10 bottom-10">
+        <img src={Illustration} alt="illustration" />
+      </div>
       <div className="flex flex-row">
         <div className="flex flex-col items-center md:items-start justify-center">
           <h1 className="text-zinc-700 font-bold max-w-[800px] text-4xl text-center md:text-left md:text-8xl md:leading-[6.5rem] mb-5">

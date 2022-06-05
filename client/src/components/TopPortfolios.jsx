@@ -34,7 +34,7 @@ export const TopPortfolios = () => {
           <h1 className="text-3xl font-bold">Top portfolios</h1>
           <p className="text-sm">Top portfolios from database by our users.</p>
         </div>
-        <div className="flex flex-col items-center justify-center md:flex-row md:space-x-5 xl:space-x-10 mt-10">
+        <div className="flex flex-col items-start justify-start md:flex-row md:space-x-5 xl:space-x-10 mt-10">
           {loading ? <PortfoliosLoading /> : ""}
 
           {data

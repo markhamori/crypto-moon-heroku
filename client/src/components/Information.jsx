@@ -16,9 +16,15 @@ export const Information = () => {
         <div className="flex flex-col mt-10 space-y-2">
           <div className="flex flex-col space-y-2">
             <h1 className="text-md">Api documents</h1>
-            <div className="text-sm text-zinc-100 bg-indigo-400 rounded-full px-5 py-1 w-fit">
-              Link
-            </div>
+            <a
+              href="https://documenter.getpostman.com/view/16898158/UVysxFzY"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <div className="text-sm text-zinc-100 bg-indigo-400 rounded-full px-5 py-1 w-fit">
+                Link
+              </div>
+            </a>
           </div>
           <div className="flex flex-col space-y-2">
             <h1 className="text-md">Used technologies</h1>

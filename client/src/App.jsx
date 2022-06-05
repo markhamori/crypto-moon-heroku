@@ -12,7 +12,7 @@ import { Information } from "./components/Information";
 function App() {
   return (
     <Router>
-      <div className="flex flex-row debug-screens">
+      <div className="flex flex-row">
         <Aside />
         <main className="flex flex-row flex-grow">
           <Routes>
